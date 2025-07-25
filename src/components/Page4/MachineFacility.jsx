@@ -185,7 +185,218 @@ const Facility = () => {
         "Pre-welding and Welding Current Adjustment",
         "User Friendly Interface"
       ],
-      image: "/assets/LithiumBattery.png"
+      image: "/assets/MaualSpot.png"
+    },
+    laserWelding: {
+      title: "Lithium Battery Pack Laser Welding Machine",
+      subtitle: "",
+      mainTitle: "Advanced Laser Welding System",
+      description: "Consists of Fiber Laser, Laser Power Supply, Control System, Laser Indicating Positioning System, WOBBLE Laser Welding Head, Cooling System, etc., which has very High stability, Flexibility and can be rotated 360 degrees.",
+      specifications: [
+        { id: '01', name: 'Power (Laser Source)', details: '1000W, 1500W, 2000W, 6000W' },
+        { id: '02', name: 'Repeat Positioning Accuracy', details: '0.05mm' },
+        { id: '03', name: 'Material Thickness', details: 'SS, Aluminum Alloy ≤ 3mm' },
+        { id: '04', name: 'Wavelength', details: '1080nm' },
+        { id: '05', name: 'Aiming & Positioning', details: 'CCD, Red Light Indicator' },
+        { id: '06', name: 'Cooling', details: 'Water Cooling' }
+      ],
+      features: [
+        "Automatic Robot Laser Welding",
+        "High stability and flexibility",
+        "360-degree rotation capability",
+        "Precision laser welding technology"
+      ],
+      image: "/assets/LithiumBatteryPack.png"
+    },
+    busbarLaserWelding: {
+      title: "Busbar Laser Welding Machine",
+      subtitle: "",
+      mainTitle: "High-Precision Busbar Welding System",
+      description: "The Busbar Laser Welding Machine is a high-precision system designed for the efficient and durable welding of busbars in battery packs. Utilizing advanced laser technology, it ensures strong, clean, and consistent welds while minimizing thermal distortion. This machine is ideal for applications requiring high-quality connections, such as EV battery packs, energy storage systems, and industrial power solutions, delivering superior reliability and production efficiency.",
+      specifications: [
+        { id: '01', name: 'Power', details: 'Up to 12000W' },
+        { id: '02', name: 'Operation Mode', details: 'Inline & Offline Operation' },
+        { id: '03', name: 'Production Cycle', details: '10CPM' },
+        { id: '04', name: 'Laser Source', details: 'IPG or MAX Laser Source' },
+        { id: '05', name: 'Bed, Cabinet & Rack', details: 'Herolaser' },
+        { id: '06', name: 'Dust Collector', details: 'Villo / Puhua' },
+        { id: '07', name: 'Water Chiller', details: 'S&A' },
+        { id: '08', name: 'Accuracy', details: '± 0.02mm' },
+        { id: '09', name: 'Galvo Welding Head', details: 'OSPRI / WSX' },
+        { id: '10', name: 'Laser Range Finder', details: 'Keyence' },
+        { id: '11', name: 'CCD Camera', details: 'Keyence' },
+        { id: '12', name: 'Servo Motor (x, y, z)', details: 'ANOVANCE' },
+        { id: '13', name: 'Stabilizer (50kVa)', details: 'Nanlin' },
+        { id: '14', name: 'PLC', details: 'Siemens / OMRON' },
+        { id: '15', name: 'Electrical Control System', details: 'Siemens / Mitsubishi / Omron' }
+      ],
+      features: [
+        "High-power laser welding capability",
+        "Precision welding with minimal thermal distortion",
+        "Suitable for EV battery packs and energy storage systems",
+        "Advanced control systems for consistent quality"
+      ],
+      image: "/assets/BusbarLaser.png"
+    },
+    pcbaBmsTester: {
+      title: "PCBA/BMS Tester",
+      subtitle: "Up to 300A, up to 32 series",
+      mainTitle: "Battery Management System Testing",
+      description: "Applied in the testing of Power battery Pack Protection Board System, Testing of PCB Performance and its technical items along with complete report generation. Composed by Virtual Battery, Short Circuit free, safety guaranteed. Pluggable design of virtual batteries enables it to be expandable. The secondary development function enables it to develop testing items as required.",
+      specifications: [
+        { id: '01', name: 'Number of Series', details: 'Up to 48 strings (optional)' },
+        { id: '02', name: 'Overdischarge Protection Release', details: '0 - 5V ± 1mV' },
+        { id: '03', name: 'Overcharge Protection Release', details: '0 - 5V ± 1mV' },
+        { id: '04', name: 'Overcharge Protection', details: '0 - 5V ± 1mV' },
+        { id: '05', name: 'Overdischarge Protection', details: '0 - 5V ± 1mV' },
+        { id: '06', name: 'Over-discharge Current Protection Value', details: 'Up to 200A ± 0.1A (continuous long-time discharge)' },
+        { id: '07', name: 'Overcurrent Protection Delay', details: '0-10S ± 1ms' },
+        { id: '08', name: 'Over-charge Current Protection Value', details: '1A-50A ± 0.1A' },
+        { id: '09', name: 'Short Circuit Protection', details: '400A (maximum duration 10ms)' },
+        { id: '10', name: 'Short Circuit Protection Delay', details: '0-10000µS ± 1µS' },
+        { id: '11', name: 'Temperature Protection', details: '60°C - 90°C ± 1°C' },
+        { id: '12', name: 'Equalization Function Turn On Voltage', details: '0 - 5V ± 1mV' },
+        { id: '13', name: 'Equalization Current', details: '0-1000mA ± 1mA' },
+        { id: '14', name: 'Total Self-Power Consumption Test', details: '0-10,000µA ± 1µA' },
+        { id: '15', name: 'Main Circuit Internal Resistance Test', details: '0-200 milliohms ± 0.1 milliohms' },
+        { id: '16', name: 'Single Cell Self-Power Consumption', details: '0-100µA ± 0.1µA' },
+        { id: '17', name: 'Dimensions', details: '50 * 43.5 * 21 cm' },
+        { id: '18', name: 'Net Weight', details: '15 kg' }
+      ],
+      features: [
+        "Balanced current measurement verification",
+        "Over-Charge & Over-discharge Measurement verification",
+        "Quiescent Current Measurement",
+        "Protection Delay Time Measurement",
+        "Gas Gauge Data Comparison",
+        "Charge & Discharge Production Current",
+        "On Resistance Testing",
+        "Current Limiting Testing",
+        "Temperature Protection Testing",
+        "Total Voltage Protection Testing",
+        "Activation Function Testing",
+        "Communication Instruction Transmission & Acquisition",
+        "Support PLC start-up test, can be used in automation production line",
+        "Complete and fully function high precision test results",
+        "Software supports modular settings of test projects, production verification and R&D testing",
+        "Test functions can be customised as required",
+        "Highly compatible, supports different types of protection board testing"
+      ],
+        image: "/assets/PCBA.png"
+    },
+    batteryAging: {
+      title: "Battery Pack Aging Machine",
+      subtitle: "Regenerative Type",
+      mainTitle: "Battery Testing System",
+      description: "Suitable for Cylindrical, Prismatic and Pouch battery packs. Adopt the four-wire test method with anti-reverse connection function, Voltage upper and lower limit protection and maximum current protection. Complete charging and discharging as per field performance including charging (constant current/voltage), suspending, and discharging modes.",
+      specifications: [
+        { id: '01', name: 'Channel Quantity', details: 'Up to 96 Channels (depending on Current Rating)' },
+        { id: '02', name: 'Output Current Range', details: 'Up to 1000A' },
+        { id: '03', name: 'Input Power', details: 'Single Phase / Three Phase AC 220/380V ± 3%, 50Hz' },
+        { id: '04', name: 'Communication Method', details: 'TCP/IP Protocol' },
+        { id: '05', name: 'Max. Output Power', details: 'Depends on Current Rating and No. of Channels' },
+        { id: '06', name: 'Output Voltage Range', details: '12V - 1000V ± 10mV' },
+        { id: '07', name: 'Working Mode of Main Channel', details: 'Constant Current Charging (CC), Constant Voltage Charging (CV), CCCV, Discharge Mode: Constant Current Discharge (CD)' },
+        { id: '08', name: 'Data Output Mode', details: 'EXCEL, TXT' },
+        { id: '09', name: 'Equipment Protection Function', details: 'Transformer Over-Temperature Protection, Output Short Circuit Protection, Power Module Over-Temperature Protection, Equipment Over-Voltage/Over-Current Protection, Battery Reverse Connection Protection, Emergency Shutdown' },
+        { id: '10', name: 'Voltage and Current Detection Sampling', details: 'Four Wire Connection' },
+        { id: '11', name: 'Channel Control Mode', details: 'Independent Control' },
+        { id: '12', name: 'Cooling Mode', details: 'Forced Air Cooling' },
+        { id: '13', name: 'Working Temperature', details: '-10°C to 45°C' }
+      ],
+      features: [
+        "Test Battery Open circuit Voltage",
+        "Battery AC Internal Resistance",
+        "Continuous Charging Current/Voltage",
+        "Continuous Discharge Current/Voltage",
+        "Charging/Discharge Overcurrent Protection",
+        "Current and Short Circuit protection time",
+        "Overcurrent Delay Time measurement",
+        "Voltage after Test analysis",
+        "Complete charging/discharging cycle testing"
+      ],
+      image: "/assets/BatteryAging.png"
+    },
+    
+    cncRouter: {
+      title: "CNC Router Machine",
+      subtitle: "4.5KW",
+      mainTitle: "Precision CNC Routing System",
+      description: "High-performance CNC router with 4.5KW spindle for precision cutting and engraving applications across various materials.",
+      specifications: [
+        { id: '01', name: 'Working Area', details: '8/4 Feet, Z-axis 300mm' },
+        { id: '02', name: 'Spindle Drivers', details: 'Invt Inverter For Spindle Motor' },
+        { id: '03', name: 'Spindle Motor', details: '4.5kw HQD Air Cooling Spindle Motor' },
+        { id: '04', name: 'Driver And Motor', details: 'Yakotech 1500watts AC Servo' },
+        { id: '05', name: 'Controller System', details: 'NK105G2 System' },
+        { id: '06', name: 'Linear System', details: 'Hiwin HG25 Linear and 25 Linear Rails' },
+        { id: '07', name: 'Power Input', details: '380v/50hz' }
+      ],
+      features: [
+        "High precision cutting and engraving",
+        "Robust construction for industrial use",
+        "Advanced servo motor control",
+        "Large working area",
+        "Professional-grade spindle system"
+      ],
+      image: "/assets/CNCRouter.png"
+    },
+    
+    laserCutting: {
+      title: "Laser Cutting Machine",
+      subtitle: "Plotboat Pro",
+      mainTitle: "CO2 Laser Engraving & Cutting System",
+      description: "PlotBot Pro, a versatile laser engraving and cutting machine equipped with 130W CO2 laser tubes. This state-of-the-art machine seamlessly blends precision and power, making it ideal for engraving and cutting various materials including wood, acrylic, leather, and more for creative and industrial applications.",
+      specifications: [
+        { id: '01', name: 'Laser Type', details: 'CO2 Laser Tube' },
+        { id: '02', name: 'Laser Power', details: '130W' },
+        { id: '03', name: 'Working Area', details: 'Customizable sizes available' },
+        { id: '04', name: 'Engraving Speed', details: 'Up to 1000mm/s' },
+        { id: '05', name: 'Cutting Speed', details: 'Up to 500mm/s' },
+        { id: '06', name: 'Positioning Accuracy', details: '±0.01mm' },
+        { id: '07', name: 'Cooling System', details: 'Water Cooling' }
+      ],
+      features: [
+        "Engrave and cut various materials",
+        "User-friendly interface for beginners and professionals",
+        "Robust construction for durability",
+        "Advanced safety features",
+        "Precision engraving for detailed artwork",
+        "Ideal for customized gifts and industrial components",
+        "Granite engraving capability"
+      ],
+      image: "/assets/LaserCutting1.png"
+    },
+    
+    airCompressor: {
+      title: "Air Compressor",
+      subtitle: "10HP 500L",
+      mainTitle: "Industrial Air Compression System",
+      description: "The 10HP 500L Air Compressor is a powerful and reliable solution for industrial applications requiring high air volume and pressure. With a 10-horsepower motor and a large 500-liter tank capacity, it ensures efficient and continuous operation for heavy-duty applications.",
+      specifications: [
+        { id: '01', name: 'Tank Capacity', details: '500 Liters' },
+        { id: '02', name: 'No. of Cylinders', details: '3' },
+        { id: '03', name: 'Maximum Flow Rate', details: '30 CFM' },
+        { id: '04', name: 'Motor Power', details: '10 HP' },
+        { id: '05', name: 'Pressure', details: '12 Bar' },
+        { id: '06', name: 'Cooling System', details: 'Air Cooled' },
+        { id: '07', name: 'Tank Type', details: 'Tank Mounted' },
+        { id: '08', name: 'Driven By', details: 'Oil Lubricated' },
+        { id: '09', name: 'Electrical Supply', details: '3 Phase' },
+        { id: '10', name: 'Auto Cut Features', details: 'Yes' },
+        { id: '11', name: 'Motor Standard', details: 'IE2' },
+        { id: '12', name: 'Belt', details: 'Safety Belt Guard' }
+      ],
+      features: [
+        "Continuous operation capability",
+        "High air volume delivery",
+        "Durable construction for industrial use",
+        "Automatic pressure control",
+        "Ideal for pneumatic tools and equipment",
+        "Energy efficient operation",
+        "Low maintenance design"
+      ],
+      image: "/assets/AirCompressor.png"
     }
   };
 
