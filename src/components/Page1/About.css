@@ -1,0 +1,346 @@
+.About{
+  overflow: hidden;
+position: relative;
+}
+
+ 
+  .About::before, .About::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.4); 
+    animation: move-bubbles 1s infinite linear;
+    z-index: -1;
+    filter: blur(100px);
+  }
+  
+  .About::before {
+    width: 400px;
+    height: 400px;
+    top: 20%;
+    left: -10%;
+    background: rgba(255, 125, 125, 0.479); 
+    animation-duration: 10s;
+  }
+  
+  .About::after {
+    width: 500px;
+    height: 500px;
+    top: 40%;
+    left: 60%;
+    background: rgba(52, 77, 216, 0.397); 
+    animation-duration: 25s;
+  }
+  
+
+  @keyframes move-bubbles {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(150px, 150px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+.vision-mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 2rem 10rem;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .background-icon {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-10%, -50%);
+    opacity: 0.5; 
+    z-index: 1;
+    font-size: 15rem; 
+    color: #2563eb; 
+  }
+  .background-icon svg:hover{
+    color: rgb(182, 4, 4);
+  }
+  .vis-title{
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #020064, #fb0c0c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+  }
+  .vis-desc{
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .vision-mission-item {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 16px; 
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); 
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  }
+  
+  .vision-mission-item:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .vision-mission-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+  }
+  
+  .vision-mission-content {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .vision-mission-item {
+      width: 90%; 
+    }
+  }
+  
+ 
+.patents {
+    margin-bottom: 3rem;
+    padding: 2rem 5rem;
+    text-align: center;
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+
+  }
+  .patent-title-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+
+  }
+  .patent-title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #020064, #fb0c0c);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    width:fit-content;
+  }
+  
+  .patent-subtitle {
+    font-size: 1.8rem;
+    color: #2563eb;
+    margin-top: 1rem;
+  }
+  .patent-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .patent-image{
+    width: 25%;
+    border-radius: 10px;
+  }
+  .patent-description {
+    width: 40%;
+    font-size: 1.1rem;
+    line-height:2em;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .patent-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .patent-item {
+    width: 100%;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .patent-item-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+  }
+  
+  .patent-card-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .patent-card {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 16px; 
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);  
+    width: 250px;  
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .patent-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .patent-card-text {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .patent-item {
+      width: 90%; 
+    }
+    
+    .patent-card {
+      width: 100%; 
+    }
+  }
+  /* Tablet view: 768px - 1024px */
+@media (max-width: 1024px) {
+  .vision-mission {
+    padding: 2rem 4rem;
+  }
+
+  .vis-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .vis-desc {
+    font-size: 1rem;
+  }
+
+  .background-icon {
+    font-size: 10rem;
+    left: 5%;
+    transform: translate(-5%, -50%);
+  }
+
+  .patents {
+    padding: 2rem 4rem;
+  }
+
+  .patent-description {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .patent-image {
+    width: 50%;
+    margin-top: 1.5rem;
+  }
+
+  .patent-card {
+    width: 200px;
+  }
+}
+
+
+/* Mobile view: below 768px */
+@media (max-width: 768px) {
+  .vision-mission {
+    padding: 1rem;
+  }
+
+  .vis-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .vis-desc {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .background-icon {
+    display: none; 
+  }
+
+  .vision-mission-item {
+    width: 80%;
+    padding: 1.2rem;
+  }
+
+  .vision-mission-title {
+    font-size: 1.5rem;
+  }
+
+  .vision-mission-content {
+    font-size: 1rem;
+  }
+
+  .patents {
+    padding: 1rem;
+  }
+
+  .patent-title {
+    font-size: 2rem;
+  }
+
+  .patent-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .patent-description {
+    width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .patent-image {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .patent-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .patent-item-title {
+    font-size: 1.4rem;
+  }
+
+  .patent-card-text {
+    font-size: 1rem;
+  }
+}

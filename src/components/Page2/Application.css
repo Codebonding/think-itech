@@ -1,0 +1,165 @@
+.application-container {
+  background-color: #f9f9f900;
+  position: relative;
+  padding: 1em 10rem;
+  box-sizing: border-box;
+  }
+  
+  
+  .application-container::before , .application-container::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%; 
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.4);
+    animation: move-bubbles 1s infinite linear;
+    z-index: -1;
+    filter: blur(100px);
+  }
+  
+  .application-container::before {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 30%;
+    animation-duration: 10s;
+    background: rgba(255, 125, 125, 0.479); 
+    transform: translate(-30%,-50%);
+}
+
+.application-container::after {
+    width: 500px;
+    height: 500px;
+    top: 25%;
+    left: 40%;
+    transform: translate(-30%,-50%);
+    background: rgba(52, 77, 216, 0.397); 
+    animation-duration: 25s;
+  }
+
+.application-h1{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    
+  }
+  
+  .application-category {
+    margin-bottom: 30px;
+  }
+  .application-cards{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  .application-category h2 {
+    font-size: 2rem;
+    color: #0000ff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .application-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    width: 33%;
+  }
+  
+  .application-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #020064, #fb0c0c);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+
+  }
+  
+  .application-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+
+  }
+  
+  .application-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .application-container {
+    padding: 1em 3rem;
+  }
+
+  .application-h1 {
+    font-size: 2rem;
+  }
+
+  .application-cards {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .application-card {
+    width: 45%;
+  }
+
+  .application-category h2 {
+    font-size: 1.6rem;
+  }
+
+  .application-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .application-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Mobile View (up to 768px) */
+@media (max-width: 768px) {
+  .application-container {
+    padding: .5em ;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .application-h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .application-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .application-card {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .application-category h2 {
+    font-size: 1.4rem;
+  }
+
+  .application-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .application-card p {
+    font-size: 0.9rem;
+  }
+}
