@@ -3,9 +3,9 @@ import './MachineFacility.css';
 
 const Facility = () => {
   const [activeTab, setActiveTab] = useState('grading');
-  const [expandedSpec, setExpandedSpec] = useState(null);
+  const [sortConfig, setSortConfig] = useState({ key: 'id', direction: 'asc' });
 
-  const machineData = {
+    const machineData = {
     grading: {
       title: "Cell Grading/Capacity/Cycler Machine",
       subtitle: "Cylindrical Cell",
@@ -743,11 +743,23 @@ const Facility = () => {
 
   const compatibleSizes = ['18650', '21700', '26650', '32700', '32138', '33140', '34189'];
 
-  const toggleSpec = (id) => {
-    setExpandedSpec(expandedSpec === id ? null : id);
+  const requestSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
   };
 
-  const currentMachine = machineData[activeTab];
+  const sortedSpecifications = [...machineData[activeTab].specifications].sort((a, b) => {
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === 'asc' ? -1 : 1;
+    }
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === 'asc' ? 1 : -1;
+    }
+    return 0;
+  });
 
   return (
     <div className="pro-item-container">
@@ -766,29 +778,29 @@ const Facility = () => {
 
         <div className="machine-content">
           <h2 className="category-title">
-            <span>{currentMachine.title}</span>
-            {currentMachine.subtitle && (
+            <span>{machineData[activeTab].title}</span>
+            {machineData[activeTab].subtitle && (
               <>
                 <span className="blue-arrow">→</span>
-                <span>{currentMachine.subtitle}</span>
+                <span>{machineData[activeTab].subtitle}</span>
               </>
             )}
           </h2>
           
-          <h1 className="pro-item-title">{currentMachine.mainTitle}</h1>
+          <h1 className="pro-item-title">{machineData[activeTab].mainTitle}</h1>
           
           <div className="image-description-container">
             <div className="pro-item-image">
               <img 
-                src={currentMachine.image} 
-                alt={currentMachine.title} 
+                src={machineData[activeTab].image} 
+                alt={machineData[activeTab].title} 
                 className="machine-image"
               />
             </div>
             
             <div className="text-content">
               <p className="pro-item-description">
-                {currentMachine.description}
+                {machineData[activeTab].description}
               </p>
               
               {activeTab === 'grading' && (
@@ -805,85 +817,68 @@ const Facility = () => {
           </div>
           
           <div className="specs-features-container">
-            {currentMachine.specifications && currentMachine.specifications.length > 0 && (
-              <div className="specifications-section">
-                <h3 className="section-title">Specifications</h3>
-                <div className="specs-grid">
-                  {currentMachine.specifications.map((spec) => (
-                    <div 
-                      key={spec.id} 
-                      className={`spec-card ${expandedSpec === spec.id ? 'expanded' : ''}`}
-                      onClick={() => toggleSpec(spec.id)}
-                    >
-                      <div className="spec-header">
-                        <span className="spec-id">{spec.id}</span>
-                        <h4 className="spec-name">{spec.name}</h4>
-                        <span className="expand-icon">{expandedSpec === spec.id ? '−' : '+'}</span>
-                      </div>
-                      <div className="spec-details">
-                        {spec.details}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+           {machineData[activeTab].specifications?.length > 0 && (
+  <div className="specifications-section">
+    <h3 className="section-title">Specifications</h3>
+    <div className="specs-table-container">
+      <table className="specs-table">
+        <thead>
+          <tr>
+            <th 
+              className={`sortable ${sortConfig.key === 'id' ? sortConfig.direction : ''}`}
+              onClick={() => requestSort('id')}
+            >
+              ID
+              <span className="sort-icon">
+                {sortConfig.key === 'id' ? 
+                  (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+              </span>
+            </th>
+            <th 
+              className={`sortable ${sortConfig.key === 'name' ? sortConfig.direction : ''}`}
+              onClick={() => requestSort('name')}
+            >
+              Specification
+              <span className="sort-icon">
+                {sortConfig.key === 'name' ? 
+                  (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+              </span>
+            </th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedSpecifications.map((spec) => (
+            <tr key={spec.id}>
+              <td className="spec-id" data-label="ID">{spec.id}</td>
+              <td className="spec-name" data-label="Specification">{spec.name}</td>
+              <td className="spec-details" data-label="Details">{spec.details}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
+
             
-            <div className="features-testitems-container">
-              {currentMachine.features && currentMachine.features.length > 0 && (
-                <div className="features-section">
-                  <h3 className="section-title">Key Features</h3>
-                  <div className="features-grid">
-                    {currentMachine.features.map((feature, index) => (
-                      <div key={index} className="feature-card">
-                        <div className="feature-icon">
-                          <svg viewBox="0 0 24 24">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                          </svg>
-                        </div>
-                        <div className="feature-text">{feature}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {currentMachine.testItems && currentMachine.testItems.length > 0 && (
-                <div className="test-items-section">
-                  <h3 className="section-title">Test Items</h3>
-                  <div className="test-items-grid">
-                    {currentMachine.testItems.map((item, index) => (
-                      <div key={index} className="test-item-card">
-                        <div className="test-item-icon">
-                          <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                          </svg>
-                        </div>
-                        <div className="test-item-text">{item}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {currentMachine.processSteps && (
-            <div className="process-section">
-              <h3 className="section-title">Process Steps</h3>
-              <div className="process-steps">
-                {currentMachine.processSteps.map((step, index) => (
-                  <div key={index} className="process-step">
-                    <div className="step-number">{index + 1}</div>
-                    <div className="step-content">
-                      <div className="step-line"></div>
-                      <div className="step-text">{step}</div>
+            <div className="features-section">
+              <h3 className="section-title">Key Features</h3>
+              <div className="features-grid">
+                {machineData[activeTab].features.map((feature, index) => (
+                  <div key={index} className="feature-card">
+                    <div className="feature-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                      </svg>
                     </div>
+                    <div className="feature-text">{feature}</div>
                   </div>
                 ))}
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
